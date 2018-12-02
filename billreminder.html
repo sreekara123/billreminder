@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!-- Bootstrap core CSS OK-->
+    <link href="css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="css/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="css/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="stylesheet">
 	<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
 	<script>
   		// Initialize Firebase
@@ -15,12 +28,57 @@
   		firebase.initializeApp(config);
   		var ref = firebase.database().ref('Players');
 		console.log(ref);
+
+		function signIn() {
+			var provider = new firebase.auth.GoogleAuthProvider();
+			firebase.auth().signInWithRedirect(provider);
+			firebase.auth().getRedirectResult().then(function(result) {
+				if (result.credential) {
+			    	// This gives you a Google Access Token. You can use it to access the Google API.
+			    	var token = result.credential.accessToken;
+			    	localStorage.setItem("accessToken", token);
+				}
+				// The signed-in user info.
+				var user = result.user;
+				localStorage.setItem("userInfo", user);
+			}).catch(function(error) {
+			    // Handle Errors here.
+			    var errorCode = error.code;
+			    var errorMessage = error.message;
+			    // The email of the user's account used.
+			    var email = error.email;
+			    // The firebase.auth.AuthCredential type that was used.
+			    var credential = error.credential;
+			    // ...
+			});
+		}
+
+		function signOut() {
+			firebase.auth().signOut().then(function() {
+  			// Sign-out successful.
+			}).catch(function(error) {
+  			// An error happened.
+			});
+		}
+
 	</script>
 	<script type="text/javascript" src="js/billreminder.js"></script>
 	<title></title>
 </head>
 <body>
-	<button onclick="checkConnection()"></button>
+	<a class="btn btn-light btn-xl sr-button" href="login.html">Login</a>
+
+	<!-- Bootstrap core JavaScript TestCommit-->
+    <script src="css/vendor/jquery/jquery.min.js"></script>
+    <script src="css/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="css/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="css/vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="css/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template Dev-->
+    <script src="js/creative.min.js"></script>
 </body>
 </html>
 
