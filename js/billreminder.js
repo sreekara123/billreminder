@@ -1,3 +1,8 @@
+/*index
+*signIn - sign into the google account
+*signOut - sign out of google account
+*/
+
 /*sign in using google account*/
 function signIn() {
 	var provider = new firebase.auth.GoogleAuthProvider();
@@ -23,8 +28,11 @@ function signIn() {
 	});
 }
 
+/*sign out of the accout*/
 function signOut() {
 	firebase.auth().signOut().then(function() {
+		localStorage.setItem("accessToken", "");
+		localStorage.setItem("userInfo", "");
 		// Sign-out successful.
 	}).catch(function(error) {
 		// An error happened.
