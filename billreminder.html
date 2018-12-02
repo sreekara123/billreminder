@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+	<script>
+  		// Initialize Firebase
+	  	var config = {
+	    	apiKey: "AIzaSyCqH_JV41skMeqbYQ-v_QnxNHmUdXleNNo",
+	    	authDomain: "bill-reminder-878c8.firebaseapp.com",
+	    	databaseURL: "https://bill-reminder-878c8.firebaseio.com",
+	    	projectId: "bill-reminder-878c8",
+	    	storageBucket: "bill-reminder-878c8.appspot.com",
+	    	messagingSenderId: "683590011543"
+	  	};
+  		firebase.initializeApp(config);
+  		var ref = firebase.database().ref('Players');
+		console.log(ref);
+	</script>
+	<script type="text/javascript" src="js/billreminder.js"></script>
 	<title></title>
 </head>
 <body>
-
+	<button onclick="checkConnection()"></button>
 </body>
 </html>
 

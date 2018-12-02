@@ -1,0 +1,22 @@
+{
+  "name": "billreminder",
+  "version": "1.0.0",
+  "description": "nothing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sreekara123/billreminder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sreekara123/billreminder/issues"
+  },
+  "homepage": "https://github.com/sreekara123/billreminder#readme",
+  "dependencies": {
+    "firebase": "^5.6.0"
+  }
+}
