@@ -1,51 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<!-- Bootstrap core CSS OK-->
-    <link href="css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="css/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-
-    <!-- Plugin CSS -->
-    <link href="css/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/creative.min.css" rel="stylesheet">
-	<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
-	<script>
-  		// Initialize Firebase
-	  	var config = {
-	    	apiKey: "AIzaSyCqH_JV41skMeqbYQ-v_QnxNHmUdXleNNo",
-	    	authDomain: "bill-reminder-878c8.firebaseapp.com",
-	    	databaseURL: "https://bill-reminder-878c8.firebaseio.com",
-	    	projectId: "bill-reminder-878c8",
-	    	storageBucket: "bill-reminder-878c8.appspot.com",
-	    	messagingSenderId: "683590011543",
-
-            clientId: "683590011543-3bppo064nlg01p8uksm7kealemdt367o.apps.googleusercontent.com",
-            scopes: [
-               "email",
-               "profile",
-               "https://www.googleapis.com/auth/calendar"
-            ],
-            discoveryDocs: [
-                "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"
-            ]
-	  	};
-  		firebase.initializeApp(config);
-	</script>
-	<script type="text/javascript" src="js/billreminder.js"></script>
-	<title>Bill Reminder</title>
-</head>
-<body>
-	<!--<a class="btn btn-light btn-xl sr-button" onclick="signIn()">Login</a>!-->
+  <head>
+    <title>Google Calendar API Quickstart</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <p>Google Calendar API Quickstart</p>
 
     <!--Add buttons to initiate auth sequence and sign out-->
-    <a id="authorize_button" class="btn btn-light btn-xl sr-button" onclick="signIn()">Login</a>
-    <a id="signout_button" class="btn btn-light btn-xl sr-button" onclick="signIn()">Logout</a>
+    <button id="authorize_button" style="display: none;">Authorize</button>
+    <button id="signout_button" style="display: none;">Sign Out</button>
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
@@ -173,18 +137,5 @@
       onload="this.onload=function(){};handleClientLoad()"
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
-
-	<!-- Bootstrap core JavaScript TestCommit-->
-    <script src="css/vendor/jquery/jquery.min.js"></script>
-    <script src="css/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="css/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="css/vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="css/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- Custom scripts for this template Dev-->
-    <script src="js/creative.min.js"></script>
-</body>
+  </body>
 </html>
-
