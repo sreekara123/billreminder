@@ -2,9 +2,14 @@
 <html>
   <head>
     <style>
+		 .logo{
+		  float: left;
+	  }
       .container {
 		  width: 80%;
-		padding: 0;
+		  margin-right: 20px;
+	      padding: 0;
+		  
       }
 
 	  header {
@@ -20,22 +25,22 @@
 		  
 	  }
 	  
+	  ul {
+		  float: right;
+	  }
 	  h1 {
 		font-family: Arial, Helvetica, sans-serif;
 		  margin: 12%;
 	  }
 	  
-	  .logo{
-		  float: left;
-	  }
+	 
 	  a {
 		  float: right;
 	  }
 	  .r {
 		  display: inline-block;
 		  padding-top:  15px;
-		  margin-left: 50px;
-		 
+		  margin-left: 70px
 	  }
 	 
 	  html {
@@ -49,11 +54,14 @@
 		  <div class="container">
 			<img src="img/icon.png" alt="logo" class="logo" height="50" width="210"/>
 		   
-				<li class="r"><a href="#">About</a></li>
-				<li class="r"><a href="#">Contact</a></li>
-			
+				<ul?>
+						<li class="r"><a href="#">About</a></li>
+						<li class="r"><a href="#">Contact Us</a></li>
+						<li class="r"><a href="#">Login</a></li>
+				</ul>
+	
 		</header>
-		<h1 style="text-align:right">Never pay a late fee again!</h1>
+		<h1 style="text-align:right">Never pay a late fee again</h1>
     <button onclick="signOut()">logout</button>
   </body>
   <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
