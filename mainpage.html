@@ -28,9 +28,19 @@
 	  ul {
 		  float: right;
 	  }
+	  
 	  h1 {
-		font-family: Arial, Helvetica, sans-serif;
+		  
+		font-family:" Noto Sans", sans-serif;
+		position: absolute; 
+		top: 100px;
+		right: 150px;
+		font-weight: 500;
+		/*position: relative;
+		top: 2px;
 		  margin: 12%;
+		  font-weight: 500;*/
+		  font-stretch: expanded;
 	  }
 	  
 	 
@@ -41,6 +51,14 @@
 		  display: inline-block;
 		  padding-top:  15px;
 		  margin-left: 70px
+	  }
+
+	  form{
+		position: absolute; 
+		top: 250px;
+		right: 250px;
+		font-weight: 600;
+		size: "100"; 
 	  }
 	 
 	  html {
@@ -62,6 +80,21 @@
 	
 		</header>
 		<h1 style="text-align:right">Never pay a late fee again</h1>
+		<form action="/action_page.php">
+			First name:<br>
+			<input type="text" name="firstname" value=" ">
+			<br>
+			Last name:<br>
+			<input type="text" name="lastname" value=" ">
+			<br>
+			Email:<br>
+			<input type="text" name="lastname" value=" ">
+			<br>
+			Password:<br>
+			<input type="password" name="lastname" value=" ">
+			<br><br>
+			<input type="submit" value="SignUp">
+		  </form> 
     <button onclick="signOut()">logout</button>
   </body>
   <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
