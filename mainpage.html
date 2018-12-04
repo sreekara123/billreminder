@@ -2,51 +2,46 @@
 <html>
   <head>
     <style>
-      body {
-        background-image: url("img/img.jpg");
-        min-height: 380px;
-
-        /* Center and scale the image nicely */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
+      .container {
+        top: 0;
       }
     </style>
     <title>mainpage</title>
-    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyCqH_JV41skMeqbYQ-v_QnxNHmUdXleNNo",
-        authDomain: "bill-reminder-878c8.firebaseapp.com",
-        databaseURL: "https://bill-reminder-878c8.firebaseio.com",
-        projectId: "bill-reminder-878c8",
-        storageBucket: "bill-reminder-878c8.appspot.com",
-        messagingSenderId: "683590011543",
-
-        clientId:
-          "683590011543-3bppo064nlg01p8uksm7kealemdt367o.apps.googleusercontent.com",
-        scopes: [
-          "email",
-          "profile",
-          "https://www.googleapis.com/auth/calendar"
-        ],
-        discoveryDocs: [
-          "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"
-        ]
-      };
-      firebase.initializeApp(config);
-    </script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css"
-    />
-    <script type="text/javascript" src="js/billreminder.js"></script>
   </head>
   <body>
-    <h1>Remind Me</h1>
+		<header>
+		  <div class="container">
+			<img src="img/icon.png" alt="logo" class="logo" height="50" width="210"/>
+		   
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			 
     <button onclick="signOut()">logout</button>
   </body>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCqH_JV41skMeqbYQ-v_QnxNHmUdXleNNo",
+      authDomain: "bill-reminder-878c8.firebaseapp.com",
+      databaseURL: "https://bill-reminder-878c8.firebaseio.com",
+      projectId: "bill-reminder-878c8",
+      storageBucket: "bill-reminder-878c8.appspot.com",
+      messagingSenderId: "683590011543",
+
+      clientId:
+        "683590011543-3bppo064nlg01p8uksm7kealemdt367o.apps.googleusercontent.com",
+      scopes: ["email", "profile", "https://www.googleapis.com/auth/calendar"],
+      discoveryDocs: [
+        "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"
+      ]
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css"
+  />
+  <script type="text/javascript" src="js/billreminder.js"></script>
 </html>
