@@ -3,8 +3,39 @@
   <head>
     <style>
       .container {
-        top: 0;
+		  width: 80%;
+		padding: 0;
       }
+
+	  header {
+		height: 50px;
+		  background: #FF8C00;
+		  
+	  }
+
+	  body{
+		background-image: url("img/Bill-Pay.jpg");
+   		 background-repeat: no-repeat;
+		  margin: 0;
+		  
+	  }
+	  
+	  h1 {
+		  margin: 12%;
+	  }
+	  
+	  .logo{
+		  float: left;
+	  }
+	  a {
+		  float: right;
+	  }
+	  .r {
+		  display: block;
+		 
+	  }
+	 
+	  
     </style>
     <title>mainpage</title>
   </head>
@@ -13,9 +44,11 @@
 		  <div class="container">
 			<img src="img/icon.png" alt="logo" class="logo" height="50" width="210"/>
 		   
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
-			 
+				<li class="r"><a href="#">About</a></li>
+				<li class="r"><a href="#">Contact</a></li>
+			
+		</header>
+		<h1 style="text-align:right">Never pay a late fee again!</h1>
     <button onclick="signOut()">logout</button>
   </body>
   <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
