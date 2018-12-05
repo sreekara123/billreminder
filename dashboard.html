@@ -9,6 +9,13 @@
 body {
     font-family: "Lato", sans-serif;
 }
+
+#cont {
+	position: relative;
+	top:100px;
+	left: 300px;
+}
+
 #display {
 	position: absolute;
 	top:100px;
@@ -21,7 +28,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #FFA000;
+    background-color: #33cccc;
     overflow-x: hidden;
     padding-top: 20px;
 }
@@ -67,9 +74,9 @@ body {
 
 .btn:hover {background: #eee;}
 
-.info {color: dodgerblue;}
+.info {color: black;}
 
-input[type=text] { text-align:right }
+/*input[type=text] { text-align:right }*/
 
 
 </style>
@@ -93,7 +100,7 @@ input[type=text] { text-align:right }
 <div class="sidenav">
   <img id="logo" src="img/icon.png">
   <button class="btn info" onclick="retrieveEvents2()">Upcoming Bills</button>
-  <button class="btn info">Saved Bills</button>
+  <button class="btn info" onclick="savedBillsStart()">Saved Bills</button>
   <button class="btn info" onclick="dueTodayStart()">Due Today</button>
   <button class="btn info" onclick="billForm()">Add Bill</button><br>
   <button class="btn info" onclick="signOut()">logout</button>

@@ -65,7 +65,8 @@ function retrieveEvents() {
          //document.getElementsByClassName("main")[0].innerHTML += arr[i].date;
          //document.getElementsByClassName("main")[0].innerHTML += '<br>';
          if(new Date(arr[i].date) > new Date()) 
-         document.getElementsByClassName("main")[0].innerHTML += '<div class="w3-container"><h2>' + arr[i].name + '    ' + arr[i].date + '</h2><p>' + arr[i].description + '</p><hr></div><br>';
+         //document.getElementsByClassName("main")[0].innerHTML += '<div class="w3-container"><h2>' + arr[i].name + '    ' + arr[i].date + '</h2><p>' + arr[i].description + '</p><hr></div><br>';
+          document.getElementsByClassName("main")[0].innerHTML +="<div id=\"cont\"><div class=\"w3-container w3-card w3-white w3-round w3-margin\"><br><img src=\"img/avatar2.png\" alt=\"Avatar\" class=\"w3-left w3-circle w3-margin-right\" style=\"width:60px\"><span class=\"w3-right w3-opacity\"></span><h4>" + arr[i].name + "</h4><br><hr class=\"w3-clear\"><p>Date: " + arr[i].date + "<br> Description: " + arr[i].description + "<br> Amount: " + arr[i].amount + "</p><div class=\"w3-row-padding\" style=\"margin:0 -16px\"><div class=\"w3-half\"></div><div class=\"w3-half\"></div></div></div>";
         }
       }
       //console.log(arr);
@@ -157,11 +158,22 @@ function dueToday() {
          //document.getElementsByClassName("main")[0].innerHTML += '<br>';
          let d1 = new Date(arr2[i].date);
          let d2 = new Date();
-         if(d1.getFullYear() === d2.getFullYear() && d1.getMonth() === d2.getMonth() && d1.getDate() === d2.getDate()) { 
-          document.getElementsByClassName("main")[0].innerHTML += '<div class="w3-container"><h2>' + arr2[i].name + '    ' + arr2[i].date + '</h2><p>' + arr2[i].description + '</p><hr></div><br>';
+         if(d1.getFullYear() === d2.getFullYear() && d1.getMonth() === d2.getMonth() && d1.getDate()+1 === d2.getDate()) { 
+          //document.getElementsByClassName("main")[0].innerHTML += '<div class="w3-container"><h2>' + arr2[i].name + '    ' + arr2[i].date + '</h2><p>' + arr2[i].description + '</p><hr></div><br>';
+          document.getElementsByClassName("main")[0].innerHTML +="<div id=\"cont\"><div class=\"w3-container w3-card w3-white w3-round w3-margin\"><br><img src=\"img/avatar2.png\" alt=\"Avatar\" class=\"w3-left w3-circle w3-margin-right\" style=\"width:60px\"><span class=\"w3-right w3-opacity\"></span><h4>" + arr2[i].name + "</h4><br><hr class=\"w3-clear\"><p>Date: " + arr2[i].date + "<br> Description: " + arr2[i].description + "<br> Amount: " + arr2[i].amount + "</p><div class=\"w3-row-padding\" style=\"margin:0 -16px\"><div class=\"w3-half\"></div><div class=\"w3-half\"></div></div></div>";
          }
         }
       }
       //console.log(arr);
       arr2.length = 0;
+}
+var arr3 = [];
+function savedBillsStart() {
+  document.getElementsByClassName("main")[0].innerHTML = "";
+  firebase.database().ref('users/' + firebase.auth().currentUser.uid).child("events").once("value", function(result) {
+  result.forEach(function(child) {
+    document.getElementsByClassName("main")[0].innerHTML +="<div id=\"cont\"><div class=\"w3-container w3-card w3-white w3-round w3-margin\"><br><img src=\"img/avatar2.png\" alt=\"Avatar\" class=\"w3-left w3-circle w3-margin-right\" style=\"width:60px\"><span class=\"w3-right w3-opacity\"></span><h4>" + child.val().name + "</h4><br><hr class=\"w3-clear\"><p>Date: " + child.val().date + "<br> Description: " + child.val().description + "<br> Amount: " + child.val().amount + "</p><div class=\"w3-row-padding\" style=\"margin:0 -16px\"><div class=\"w3-half\"></div><div class=\"w3-half\"></div></div></div>";
+  });
+  });
+  console.log(arr2);
 }

@@ -78,6 +78,10 @@ span.psw {
 	  	};
   		firebase.initializeApp(config);
 
+  		function homepage() {
+  			window.location.replace("mainpage.html");
+  		}
+
   		function signIn() {
   			firebase.auth().signInWithEmailAndPassword(document.getElementById("emailForLogin").value, document.getElementById("passwordForLogin").value).catch(function(error) {
  			 // Handle Errors here.
@@ -120,7 +124,7 @@ span.psw {
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
+    <button type="button" class="cancelbtn" onclick="homepage()">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </div>
