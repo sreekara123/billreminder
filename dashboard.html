@@ -1,0 +1,107 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
+
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+#display {
+	position: absolute;
+	top:100px;
+	left: 400px;
+}
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #FFA000;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 250px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+    position: absolute;
+}
+
+#logo {
+	height: 50px;
+	width: 200px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.btn {
+    border: none;
+    background-color: inherit;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn:hover {background: #eee;}
+
+.info {color: dodgerblue;}
+
+input[type=text] { text-align:right }
+
+
+</style>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyCqH_JV41skMeqbYQ-v_QnxNHmUdXleNNo",
+	    authDomain: "bill-reminder-878c8.firebaseapp.com",
+	    databaseURL: "https://bill-reminder-878c8.firebaseio.com",
+	    projectId: "bill-reminder-878c8",
+	    storageBucket: "bill-reminder-878c8.appspot.com",
+	    messagingSenderId: "683590011543",
+	  };
+	  firebase.initializeApp(config);
+	</script>
+<script type="text/javascript" src="js/billreminder.js"></script>
+</head>
+<body>
+
+<div class="sidenav">
+  <img id="logo" src="img/icon.png">
+  <button class="btn info" onclick="retrieveEvents2()">Upcoming Bills</button>
+  <button class="btn info">Saved Bills</button>
+  <button class="btn info" onclick="dueTodayStart()">Due Today</button>
+  <button class="btn info" onclick="billForm()">Add Bill</button><br>
+  <button class="btn info" onclick="signOut()">logout</button>
+</div>
+
+<div class="main">
+  
+</div>
+     
+</body>
+</html> 

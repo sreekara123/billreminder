@@ -2,125 +2,311 @@
 <html>
   <head>
     <style>
-		 .logo{
-		  float: left;
-	  }
+
+a:link {
+    text-decoration: none;
+    color: #191970;
+    font-size: large;
+    
+    font-family:" Noto Sans", sans-serif;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+    
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+    #bt {
+        background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 24px;;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    }
+         .logo{
+          float: left;
+      }
       .container {
-		  width: 80%;
-		  margin-right: 20px;
-	      padding: 0;
-		  
+          width: 80%;
+          margin-right: 20px;
+          padding: 0;
+          
       }
 
-	  header {
-		height: 50px;
-		  background: #FF8C00;
-		  
-	  }
+      header {
+        height: 50px;
+          background: #FF8C00;
+          
+      }
 
-	  body{
-		background-image: url("img/Bill-Pay.jpg");
-   		 background-repeat: no-repeat;
-		  margin: 0;
-		  
-	  }
-	  
-	  ul {
-		  float: right;
-	  }
-	  
-	  h1 {
-		  
-		font-family:" Noto Sans", sans-serif;
-		position: absolute; 
-		top: 100px;
-		right: 150px;
-		font-weight: 500;
-		/*position: relative;
-		top: 2px;
-		  margin: 12%;
-		  font-weight: 500;*/
-		  font-stretch: expanded;
-	  }
-	  
-	 
-	  a {
-		  float: right;
-	  }
-	  .r {
-		  display: inline-block;
-		  padding-top:  15px;
-		  margin-left: 70px
-	  }
+      body{
+        background-image: url("img/Bill-Pay.jpg");
+         background-repeat: no-repeat;
+          margin: 0;
+          
+      }
+      
+      ul {
+          float: right;
+          overflow: hidden;
+   
+      }
+      
+      h1 {
+          
+        font-family:" Noto Sans", sans-serif;
+        position: absolute; 
+        top: 100px;
+        right: 150px;
+        font-weight: 500;
+        color:  #191970;
+        /*position: relative;
+        top: 2px;
+          margin: 12%;
+          font-weight: 500;*/
+          font-stretch: expanded;
+      }
+      
+     
+      a {
+          float: right;
+      }
+      .r {
+          display: inline-block;
+          padding-top: 3.5px;
+          margin-left: 70px;
+          text-decoration: none;
 
-	  form{
-		position: absolute; 
-		top: 250px;
-		right: 250px;
-		font-weight: 600;
-		size: "100"; 
-	  }
-	 
-	  html {
-  scroll-behavior: smooth;
-	}
+      }
+
+    ul li {
+        text-decoration: none;
+    }
+      .signUp {
+        position: absolute; 
+        top: 250px;
+        right: 250px;
+        font-weight: 600;
+        size: "100"; 
+      }
+     /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color:   #E6E6FA;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.modal1 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal1-content {
+    background-color:   #E6E6FA;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close1 {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+p.serif {
+    font-family: Arial, Helvetica, sans-serif;
+    color:  #191970;
+}
+p.ser {
+    font-family: Arial, Helvetica, sans-serif;
+    color:  #191970;
+}
+
+.close1:hover,
+.close1:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+      html {
+        scroll-behavior: smooth;
+      }
     </style>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCqH_JV41skMeqbYQ-v_QnxNHmUdXleNNo",
+        authDomain: "bill-reminder-878c8.firebaseapp.com",
+        databaseURL: "https://bill-reminder-878c8.firebaseio.com",
+        projectId: "bill-reminder-878c8",
+        storageBucket: "bill-reminder-878c8.appspot.com",
+        messagingSenderId: "683590011543",
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script type="text/javascript" src="js/billreminder.js"></script>
     <title>mainpage</title>
   </head>
   <body>
-		<header>
-		  <div class="container">
-			<img src="img/icon.png" alt="logo" class="logo" height="50" width="210"/>
-		   
-				<ul?>
-						<li class="r"><a href="#">About</a></li>
-						<li class="r"><a href="#">Contact Us</a></li>
-						<li class="r"><a href="#">Login</a></li>
-				</ul>
-	
-		</header>
-		<h1 style="text-align:right">Never pay a late fee again</h1>
-		<form action="/action_page.php">
-			First name:<br>
-			<input type="text" name="firstname" value=" ">
-			<br>
-			Last name:<br>
-			<input type="text" name="lastname" value=" ">
-			<br>
-			Email:<br>
-			<input type="text" name="lastname" value=" ">
-			<br>
-			Password:<br>
-			<input type="password" name="lastname" value=" ">
-			<br><br>
-			<input type="submit" value="SignUp">
-		  </form> 
-    <button onclick="signOut()">logout</button>
-  </body>
-  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyCqH_JV41skMeqbYQ-v_QnxNHmUdXleNNo",
-      authDomain: "bill-reminder-878c8.firebaseapp.com",
-      databaseURL: "https://bill-reminder-878c8.firebaseio.com",
-      projectId: "bill-reminder-878c8",
-      storageBucket: "bill-reminder-878c8.appspot.com",
-      messagingSenderId: "683590011543",
+    <header>
+      <div class="container">
+        <img src="img/icon.png" alt="logo" class="logo" height="50" width="210"/>
+            <ul>
+                <li class="r" id="myBtn"><a href="#">About</a></li>
+                <li class="r" id="myBtnn"><a href="#">Contact Us</a></li>
+                <li class="r"><a href="signin.html">Login</a></li>
+            </ul>
 
-      clientId:
-        "683590011543-3bppo064nlg01p8uksm7kealemdt367o.apps.googleusercontent.com",
-      scopes: ["email", "profile", "https://www.googleapis.com/auth/calendar"],
-      discoveryDocs: [
-        "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"
-      ]
-    };
-    firebase.initializeApp(config);
-  </script>
-  <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
-  <link
-    rel="stylesheet"
-    href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css"
-  />
-  <script type="text/javascript" src="js/billreminder.js"></script>
+    </header>
+<div id="myModal1" class="modal1">
+
+        <!-- Modal content -->
+        <div class="modal1-content">
+          <span class="close1">&times;</span>
+          <p class="ser">Sreekara Yachamaneni : syachama@purdue.edu<br><br>Seerat Dheer: sdheer@purdue.edu</p>
+        </div>
+      
+      </div>
+
+    <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p class="serif">RemindMe is an interactive application that allows users to track their montly bills. With RemindMe, forgetting to pay bills is the least of your worries.<br>Sign up and never pay a late fee again!</p>
+            </div>
+          
+          </div>
+         
+
+          <script>
+                // Get the modal
+                var modal1 = document.getElementById('myModal1');
+                
+                // Get the button that opens the modal
+                var btnn = document.getElementById("myBtnn");
+                
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close1")[0];
+                
+                // When the user clicks the button, open the modal 
+                btnn.onclick = function() {
+                    modal1.style.display = "block";
+                }
+                
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function(){
+                    modal1.style.display = "none";
+                }
+                
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal1) {
+                        modal1.style.display = "none";
+                    }
+                }
+                </script>
+                <script>
+                // Get the modal
+                var modal = document.getElementById('myModal');
+                
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+                
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+                
+                // When the user clicks the button, open the modal 
+                btn.onclick = function() {
+                    modal.style.display = "block";
+                }
+                
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+                
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+                </script>
+        <h1 style="text-align:right">Never pay a late fee again</h1>
+        <!-- <form> -->
+        <div class="signUp">
+            First name:<br>
+            <input type="text">
+            <br>
+            Last name:<br>
+            <input type="text">
+            <br>
+            Email:<br>
+            <input type="text" id="email">
+            <br>
+            Password:<br>
+            <input type="password" id="password">
+            <br><br>
+            <button id="bt" onclick="signUp()">Sign Up</button>
+        </div>
+<!--          </form>  -->
+
+  </body>
 </html>
